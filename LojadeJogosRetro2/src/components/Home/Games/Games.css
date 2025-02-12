@@ -1,0 +1,8 @@
+.cardGames {
+    width: 18rem;
+}
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: fit-content !important;
+}

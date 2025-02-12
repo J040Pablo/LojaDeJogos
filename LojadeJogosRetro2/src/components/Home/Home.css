@@ -1,0 +1,33 @@
+.nav-menu {
+    display: inline-block;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+}
+
+.main-content {
+    padding-top: 60px; /* Ajuste conforme o tamanho da navbar */
+}
+
+.userInfo {
+    .userAvatar {
+        width: 40px;
+        margin-right: 2%;
+    }
+}
+
+.navBarContainer {
+    position: sticky;
+    top: 0;
+}
