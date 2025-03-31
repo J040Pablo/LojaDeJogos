@@ -1,19 +1,18 @@
-const express = require('express')
+const express = require('express');
+const GameController = require('../controllers/GameController');
 const router = express.Router();
 const games = [
         {name: "blue", price: 100},
         {name: "red", price: 80}
 ]
 router.route('/api/games')
-.get((req, res) => {res.send(games)})
-.post((req, res) => {
+.get(GameController.findAll)
+.post(GameController.insertOne)
 
-        games.push(req.body)
-        res.send({
-            message: "Jogo adicionado com sucesso",
-            content: req.body
-        })
-    })
+router.route('/api/games/:code')
+.get(GameController.findOne)
+.delete(GameController.deleteOne)
+.put(GameController.updateOne)
 
 
 module.exports = router;

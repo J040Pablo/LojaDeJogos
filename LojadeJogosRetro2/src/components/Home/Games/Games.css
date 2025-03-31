@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .cardGames {
     width: 18rem;
+    font-family: 'Press Start 2P', cursive;
 }
+
 .cardContainer {
     display: flex;
     flex-wrap: wrap;
