@@ -1,0 +1,91 @@
+/* Importando a fonte retro */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4a00e0, #8e2de2); /* Degradê azul e roxo */
+    color: #fff;
+    font-family: 'Press Start 2P', cursive; /* Aplicando a fonte retro */
+}
+
+.loginTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espaçamento entre os campos */
+    width: 100%;
+    max-width: 400px;
+    background: rgba(0, 0, 0, 0.6); /* Fundo semitransparente */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+.loginInput {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'Press Start 2P', cursive;
+    background: #fff;
+    color: #333;
+}
+
+.loginButton {
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #2522d4, #1a1879); /* Gradiente nos botões */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase; /* Texto em maiúsculas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra nos botões */
+}
+
+.loginButton:hover {
+    transform: scale(1.05); /* Aumenta o botão ao passar o mouse */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
+}
+
+.loginButton:active {
+    transform: scale(0.95); /* Reduz o botão ao clicar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra reduzida */
+}
+
+.loginLink {
+    margin-top: 1rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #6535e9, #3f0774); /* Gradiente roxo */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase; /* Texto em maiúsculas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.loginLink:hover {
+    transform: scale(1.05); /* Aumenta o botão ao passar o mouse */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
+}
+
+.loginLink:active {
+    transform: scale(0.95); /* Reduz o botão ao clicar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra reduzida */
+}

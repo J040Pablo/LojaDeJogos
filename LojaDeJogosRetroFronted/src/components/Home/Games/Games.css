@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Estilo geral */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #4a00e0, #8e2de2); /* Degradê azul e roxo */
+    color: #fff;
+}
+
+/* Container principal dos cards */
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 2rem; /* Espaçamento para evitar sobreposição com o cabeçalho */
+}
+
+/* Estilo dos cards */
+.cardGames {
+    width: 300px;
+    background: #1e1e1e; /* Fundo escuro sólido */
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Sombra mais intensa */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Press Start 2P', cursive;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #d4d4d4 !important; /* Garante que o texto fique branco */
+}
+
+.cardGames.card {
+    width: 300px !important; /* Força o estilo */
+    background: #1e1e1e !important; /* Fundo escuro */
+    border-radius: 15px !important;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5) !important;
+    overflow: hidden !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    font-family: 'Press Start 2P', cursive !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.cardGames:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Imagem do card */
+.cardGames img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Conteúdo do card */
+.cardGames .cardContent {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.cardGames .cardContent h3 {
+    font-size: 1.5rem;
+    margin: 0 0 1rem;
+    color: #fff; /* Garante que o título fique branco */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.cardGames .cardContent p {
+    font-size: 1rem;
+    color: #ccc; /* Garante que o texto da descrição fique cinza claro */
+    margin: 0 0 1.5rem;
+    line-height: 1.5;
+}
+
+/* Botão do card */
+.cardGames .cardContent .cardButton {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Gradiente azul escuro */
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cardGames .cardContent .cardButton:hover {
+    background: linear-gradient(135deg, #0056b3, #007bff); /* Inverte o gradiente */
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cardContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .cardGames {
+        width: 90%;
+    }
+}
+
+/* Estilo do cabeçalho */
+.gamesNavbar {
+    margin-bottom: 2rem; /* Espaçamento abaixo do cabeçalho */
+    background: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+}
+
+.gamesNavbar .navbar-brand {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.gamesNavbar .nav-link {
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.gamesNavbar .nav-link:hover {
+    color: #8e2de2; /* Cor roxa ao passar o mouse */
+}
+
+/* Estilo do título */
+.gamesHeader {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}

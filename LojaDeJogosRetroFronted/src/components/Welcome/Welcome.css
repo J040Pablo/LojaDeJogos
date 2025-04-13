@@ -1,0 +1,52 @@
+/* Importando a fonte retro */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.welcomeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4a00e0, #8e2de2); /* Degradê azul e roxo */
+    color: #fff;
+    font-family: 'Press Start 2P', cursive; /* Aplicando a fonte retro */
+}
+
+.welcomeTitle {
+    font-size: 2.5rem;
+    margin-bottom: 3rem; /* Maior espaçamento abaixo do título */
+    font-family: 'Press Start 2P', cursive; /* Garantindo a fonte retro */
+    text-align: center;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column; /* Alinha os botões verticalmente */
+    gap: 2rem; /* Maior espaçamento entre os botões */
+    align-items: center;
+}
+
+.welcomeButton {
+    padding: 1.2rem 3.5rem; /* Botões maiores */
+    font-size: 1.2rem; /* Texto maior */
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #ff9800, #f44336); /* Gradiente nos botões */
+    border: none;
+    border-radius: 10px; /* Bordas arredondadas */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Press Start 2P', cursive; /* Aplicando a fonte retro */
+    text-transform: uppercase; /* Texto em maiúsculas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra nos botões */
+}
+
+.welcomeButton:hover {
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
+}
+
+.welcomeButton:active {
+    transform: scale(0.95); /* Reduz o botão ao clicar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra reduzida */
+}
