@@ -30,8 +30,9 @@ app.use(MiddlewareAuth);
 // Rotas privadas
 app.use(GameRouter);
 
-// Definir porta
-const PORT = process.env.PORT || 3000;
+// Definir porta fixa 80
+const PORT = 80;
+
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });
