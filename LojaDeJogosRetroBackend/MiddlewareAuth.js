@@ -1,37 +1,42 @@
-const jwtService = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
-module.exports = async (req, res, next) => {
-    const path = req.path;
-    const method = req.method;
-    const nonSecurityPaths = ['/login', '/about', '/api/games', '/api/users'];
+module.exports = (req, res, next) => {
+  const { path, method } = req;
 
-    // Permite POST em /api/users para cadastro de novos usuários
-    if (nonSecurityPaths.includes(path) || (path === '/api/users' && method === 'POST')) {
-        return next();
-    }
+  // Rotas públicas que não exigem autenticação
+  const publicPaths = [
+    { path: "/login", method: "POST" },
+    { path: "/register", method: "POST" }, // Cadastro de usuário
+    { path: "/about", method: "GET" },
+    { path: "/api/games", method: "GET" },
+  ];
 
-    const authHeader = req.headers.authorization;
+  // Verifica se a rota atual é pública
+  const isPublic = publicPaths.some(
+    (route) => route.path === path && route.method === method
+  );
 
-    if (!authHeader) {
-        return res.status(401).json({ message: 'Token não fornecido' });
-    }
+  if (isPublic) {
+    return next();
+  }
 
-    // Verifica se o token está no formato 'Bearer <token>'
-    const parts = authHeader.split(' ');
-    if (parts.length !== 2 || parts[0] !== 'Bearer') {
-        return res.status(401).json({ message: 'Token mal formatado' });
-    }
+  const authHeader = req.headers.authorization;
 
-    const token = parts[1];
+  if (!authHeader) {
+    return res.status(401).json({ message: "Token não fornecido" });
+  }
 
-    try {
-        const result = jwtService.verify(token, process.env.SECRET);
-        if (result) {
-            req.user = result; // Opcional: adiciona as informações do usuário à requisição
-            return next();
-        }
-        throw new Error('Usuário sem autorização');
-    } catch (error) {
-        res.status(401).json({ message: error.message });
-    }
+  const [bearer, token] = authHeader.split(" ");
+
+  if (bearer !== "Bearer" || !token) {
+    return res.status(401).json({ message: "Token mal formatado" });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded; // Adiciona dados do usuário na requisição
+    next();
+  } catch (error) {
+    return res.status(401).json({ message: "Token inválido ou expirado" });
+  }
 };
