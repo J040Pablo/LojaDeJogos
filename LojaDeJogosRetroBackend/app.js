@@ -15,8 +15,8 @@ app.use(express.json());
 app.use(cors());
 
 // Importar rotas
-const GameRouter = require("./src/routers/GameRouter");
-const UserRouter = require("./src/routers/UserRouter");
+const GameRouter = require("./src/Routers/GameRouter");
+const UserRouter = require("./src/Routers/UserRouter");
 const MiddlewareAuth = require("./MiddlewareAuth");
 
 // Rotas públicas
@@ -30,6 +30,6 @@ app.use("/api/games", GameRouter);
 
 // Porta
 const PORT = process.env.PORT || 3000;
-app.listen(80, () => {
-  console.log(`🚀 Servidor rodando na porta 80`);
+app.listen(PORT, () => {
+  console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });
