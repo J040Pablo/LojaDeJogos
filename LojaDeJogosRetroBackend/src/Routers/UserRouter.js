@@ -1,17 +1,19 @@
-const express = require('express')
+const express = require("express");
 const router = express.Router();
-const UserController = require('../controllers/UserController');
+const UserController = require("../controllers/UserController");
 
-router.route('/api/users')
-.get(UserController.findAll)
-.post(UserController.insertOne)
+// Rotas públicas
+router.post("/register", UserController.register);
+router.post("/login", UserController.login);
 
-router.route('/api/users/:code')
-.get(UserController.findOne)
-.put(UserController.updateOne)
-.delete(UserController.deleteOne)
+// CRUD de usuários (protegido via MiddlewareAuth)
+router.route("/")
+  .get(UserController.findAll)
+  .post(UserController.insertOne);
 
-router.post('/register', UserController.register);
-router.post('/login', UserController.login);
+router.route("/:code")
+  .get(UserController.findOne)
+  .put(UserController.updateOne)
+  .delete(UserController.deleteOne);
 
 module.exports = router;

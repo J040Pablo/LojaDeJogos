@@ -1,18 +1,15 @@
-const express = require('express');
-const GameController = require('../controllers/GameController');
+const express = require("express");
 const router = express.Router();
-const games = [
-        {name: "blue", price: 100},
-        {name: "red", price: 80}
-]
-router.route('/api/games')
-.get(GameController.findAll)
-.post(GameController.insertOne)
+const GameController = require("../controllers/GameController");
 
-router.route('/api/games/:code')
-.get(GameController.findOne)
-.delete(GameController.deleteOne)
-.put(GameController.updateOne)
+// CRUD de games (privado, precisa de token)
+router.route("/")
+  .get(GameController.findAll)
+  .post(GameController.insertOne);
 
+router.route("/:code")
+  .get(GameController.findOne)
+  .put(GameController.updateOne)
+  .delete(GameController.deleteOne);
 
 module.exports = router;
