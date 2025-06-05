@@ -17,7 +17,7 @@ app.use(cors());
 // Importar rotas
 const GameRouter = require("./src/routers/GameRouter");
 const UserRouter = require("./src/routers/UserRouter");
-const MiddlewareAuth = require("./src/middleware/MiddlewareAuth");
+const MiddlewareAuth = require("./MiddlewareAuth");
 
 // Rotas públicas
 app.use("/api/users", UserRouter);
