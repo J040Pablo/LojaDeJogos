@@ -46,6 +46,6 @@ app.use(GameRouter);
 // Definir porta 3000 para desenvolvimento local
 const PORT = 3000;
 
-app.listen(PORT, () => {
-  console.log(`Sua aplicação está sendo executada na porta ${PORT}`);
+app.listen(80, () => {
+  console.log(`Sua aplicação está sendo executada na porta ${80}`);
 });
