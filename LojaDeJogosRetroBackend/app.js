@@ -24,7 +24,7 @@ mongoose
 
 // Inicializar o app
 const app = express();
-
+// teste
 // Importar rotas e middleware
 const GameRouter = require("./src/Routers/GameRouter");
 const userRouter = require("./src/Routers/UserRouter");
