@@ -30,6 +30,6 @@ app.use("/api/games", GameRouter);
 
 // Porta
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`🚀 Servidor rodando na porta ${PORT}`);
+app.listen(80, () => {
+  console.log(`🚀 Servidor rodando na porta 80`);
 });
