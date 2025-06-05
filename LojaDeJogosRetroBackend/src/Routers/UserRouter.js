@@ -6,14 +6,14 @@ const UserController = require("../controllers/UserController");
 router.post("/register", UserController.register);
 router.post("/login", UserController.login);
 
-// CRUD de usuários (protegido)
+// CRUD de usuários
 router.route("/")
-  .get(UserController.findAll)
-  .post(UserController.insertOne);
+  .get(UserController.findAll)        // Buscar todos os usuários
+  .post(UserController.insertOne);    // Inserir um novo usuário
 
-router.route("/:code")
-  .get(UserController.findOne)
-  .put(UserController.updateOne)
-  .delete(UserController.deleteOne);
+router.route("/:email")
+  .get(UserController.findOne)        // Buscar um usuário pelo email
+  .put(UserController.updateOne)      // Atualizar um usuário pelo email
+  .delete(UserController.deleteOne);  // Deletar um usuário pelo email
 
 module.exports = router;
