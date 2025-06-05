@@ -6,7 +6,7 @@ const UserController = require("../controllers/UserController");
 router.post("/register", UserController.register);
 router.post("/login", UserController.login);
 
-// CRUD de usuários (protegido via MiddlewareAuth)
+// CRUD de usuários (protegido)
 router.route("/")
   .get(UserController.findAll)
   .post(UserController.insertOne);

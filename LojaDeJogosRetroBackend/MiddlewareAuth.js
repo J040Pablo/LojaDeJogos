@@ -1,6 +1,22 @@
 const jwt = require("jsonwebtoken");
 
 module.exports = (req, res, next) => {
+  const { originalUrl, method } = req;
+
+  // Rotas públicas
+  const publicPaths = [
+    { path: "/api/users/login", method: "POST" },
+    { path: "/api/users/register", method: "POST" }
+  ];
+
+  const isPublic = publicPaths.some(
+    (route) => originalUrl.startsWith(route.path) && method === route.method
+  );
+
+  if (isPublic) {
+    return next();
+  }
+
   const authHeader = req.headers.authorization;
 
   if (!authHeader) {

@@ -22,7 +22,7 @@ const MiddlewareAuth = require("./src/middleware/MiddlewareAuth");
 // Rotas públicas
 app.use("/api/users", UserRouter);
 
-// Middleware de autenticação (aplica para rotas abaixo)
+// Middleware de autenticação (tudo abaixo disso é protegido)
 app.use(MiddlewareAuth);
 
 // Rotas privadas
