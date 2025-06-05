@@ -7,7 +7,7 @@ const cors = require("cors");
 console.log("Tentando conectar ao MongoDB Local...");
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/lojadejogos")
+  .connect(process.env.MONGO_URL)
   .then(() => {
     console.log("✅ Conectado ao MongoDB Local com sucesso!");
     console.log("Database:", mongoose.connection.db.databaseName);
@@ -43,9 +43,8 @@ app.use(MiddlewareAuth);
 // Rotas privadas
 app.use(GameRouter);
 
-// Definir porta 3000 para desenvolvimento local
+// Definir porta para 3000
 const PORT = 3000;
-
-app.listen(80, () => {
-  console.log(`Sua aplicação está sendo executada na porta ${80}`);
+app.listen(PORT, () => {
+  console.log(`Sua aplicação está sendo executada na porta ${PORT}`);
 });
