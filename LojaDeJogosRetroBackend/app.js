@@ -3,19 +3,18 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const cors = require("cors");
 
-// Conexão com MongoDB Atlas
-console.log("Tentando conectar ao MongoDB Atlas...");
-console.log("URL do MongoDB:", process.env.MONGO_URL ? "URL definida" : "URL não definida");
+// Conexão com MongoDB Local
+console.log("Tentando conectar ao MongoDB Local...");
 
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect("mongodb://127.0.0.1:27017/lojadejogos")
   .then(() => {
-    console.log("✅ Conectado ao MongoDB Atlas com sucesso!");
+    console.log("✅ Conectado ao MongoDB Local com sucesso!");
     console.log("Database:", mongoose.connection.db.databaseName);
     console.log("Host:", mongoose.connection.host);
   })
   .catch((err) => {
-    console.error("❌ Erro ao conectar no MongoDB Atlas:", err);
+    console.error("❌ Erro ao conectar no MongoDB Local:", err);
     console.error("Detalhes do erro:", {
       name: err.name,
       message: err.message,
@@ -44,8 +43,8 @@ app.use(MiddlewareAuth);
 // Rotas privadas
 app.use(GameRouter);
 
-// Definir porta fixa 80
-const PORT = 80;
+// Definir porta 3000 para desenvolvimento local
+const PORT = 3000;
 
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando na porta ${PORT}`);
