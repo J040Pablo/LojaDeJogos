@@ -32,3 +32,6 @@ app.use("/api/games", GameRouter);
 app.listen(80, () => {
   console.log("O Servidor Esta rodando na porta 80");
 });
+app.get('/', (req, res) => {
+  res.send('Servidor funcionando!');
+});
